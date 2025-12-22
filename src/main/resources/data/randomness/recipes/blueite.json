@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "randomness:pikite" },
+    { "item": "randomness:pikite" }
+  ],
+  "result": { "item": "randomness:blueite", "count": 1 }
+}
