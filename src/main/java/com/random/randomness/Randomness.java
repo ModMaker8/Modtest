@@ -20,6 +20,8 @@ public class Randomness implements ModInitializer {
 		// Proceed with mild caution.
 
 		ModBlocks.registerAll();
+		ModBlockEntities.registerAll();
+		ModScreenHandlers.registerAll();
 		// ModItems are represented by BlockItem instances created in ModItems
 
 		LOGGER.info("Randomness initialized: registered Pikite blocks and ore");

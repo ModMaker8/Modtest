@@ -22,11 +22,12 @@ public class ModBlocks {
         () -> new ItemStack(net.minecraft.item.Items.STONE)
     );
 
-    public static final Block PIKITE_BLOCK = new Block(FabricBlockSettings.of(net.minecraft.block.Material.STONE).strength(1.5f, 6.0f).requiresTool().sounds(BlockSoundGroup.STONE));
+    public static final Block PIKITE_BLOCK = new RandomBlock(FabricBlockSettings.of(net.minecraft.block.Material.STONE).strength(1.5f, 6.0f).requiresTool().sounds(BlockSoundGroup.STONE));
 
-    public static final Block PIKITE_ORE = new OreBlock(FabricBlockSettings.of(net.minecraft.block.Material.STONE).strength(3.0f, 9.0f).requiresTool().sounds(BlockSoundGroup.STONE), UniformIntProvider.create(0,0));
+    public static final Block PIKITE_ORE = new PikiteOreBlock(FabricBlockSettings.of(net.minecraft.block.Material.STONE).strength(3.0f, 9.0f).requiresTool().sounds(BlockSoundGroup.STONE), UniformIntProvider.create(0,0));
     
-    public static final Block BLUEITE_BLOCK = new Block(FabricBlockSettings.of(net.minecraft.block.Material.STONE).strength(1.5f, 6.0f).requiresTool().sounds(BlockSoundGroup.STONE));
+    public static final Block BLUEITE_BLOCK = new RandomBlock(FabricBlockSettings.of(net.minecraft.block.Material.STONE).strength(1.5f, 6.0f).requiresTool().sounds(BlockSoundGroup.STONE));
+    public static final Block BLUER_BLOCK = new BluerBlock(FabricBlockSettings.of(net.minecraft.block.Material.WOOD).strength(2.0f).sounds(BlockSoundGroup.WOOD));
 
     public static void registerAll() {
         Registry.register(Registry.BLOCK, new Identifier(Randomness.MOD_ID, "pikite"), PIKITE_BLOCK);
@@ -36,6 +37,8 @@ public class ModBlocks {
         Registry.register(Registry.ITEM, new Identifier(Randomness.MOD_ID, "pikite_ore"), ModItems.PIKITE_ORE_ITEM);
         Registry.register(Registry.BLOCK, new Identifier(Randomness.MOD_ID, "blueite"), BLUEITE_BLOCK);
         Registry.register(Registry.ITEM, new Identifier(Randomness.MOD_ID, "blueite"), ModItems.BLUEITE_BLOCK_ITEM);
+        Registry.register(Registry.BLOCK, new Identifier(Randomness.MOD_ID, "bluer"), BLUER_BLOCK);
+        Registry.register(Registry.ITEM, new Identifier(Randomness.MOD_ID, "bluer"), ModItems.BLUER_BLOCK_ITEM);
     }
     // Worldgen not registered in Java to avoid mapping issues.
     // To add ore generation, add a data pack under data/randomness/worldgen or implement generation code tailored to your mappings.

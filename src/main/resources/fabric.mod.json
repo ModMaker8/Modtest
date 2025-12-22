@@ -3,9 +3,9 @@
 	"id": "randomness",
 	"version": "${version}",
 	"name": "Randomness",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "This mod adds some random blocks and their ores!",
 	"authors": [
-		"Me!"
+		"myperson8"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
