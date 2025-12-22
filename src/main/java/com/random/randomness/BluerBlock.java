@@ -19,11 +19,17 @@ public class BluerBlock extends Block {
 
     @Override
     public NamedScreenHandlerFactory createScreenHandlerFactory(BlockState state, World world, net.minecraft.util.math.BlockPos pos) {
-        BlockEntity be = world.getBlockEntity(pos);
-        if (be instanceof BluerBlockEntity) {
-            return (BluerBlockEntity) be;
-        }
-        return null;
+        return new NamedScreenHandlerFactory() {
+            @Override
+            public net.minecraft.text.Text getDisplayName() {
+                return new net.minecraft.text.TranslatableText("container.randomness.bluer");
+            }
+
+            @Override
+            public net.minecraft.screen.ScreenHandler createMenu(int syncId, net.minecraft.entity.player.PlayerInventory playerInventory, net.minecraft.entity.player.PlayerEntity player) {
+                return new BluerScreenHandler(syncId, playerInventory, new net.minecraft.inventory.SimpleInventory(3), net.minecraft.screen.ScreenHandlerContext.EMPTY);
+            }
+        };
     }
 
     @Override

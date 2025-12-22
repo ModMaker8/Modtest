@@ -8,6 +8,6 @@ public class ModScreenHandlers {
     public static ScreenHandlerType<BluerScreenHandler> BLUER_SCREEN_HANDLER;
 
     public static void registerAll() {
-        BLUER_SCREEN_HANDLER = Registry.register(Registry.SCREEN_HANDLER, new Identifier(Randomness.MOD_ID, "bluer"), new ScreenHandlerType<>(BluerScreenHandler::new));
+        BLUER_SCREEN_HANDLER = Registry.register(Registry.SCREEN_HANDLER, new Identifier(Randomness.MOD_ID, "bluer"), new ScreenHandlerType<>((syncId, playerInventory) -> new BluerScreenHandler(syncId, playerInventory, new net.minecraft.inventory.SimpleInventory(3), net.minecraft.screen.ScreenHandlerContext.EMPTY)));
     }
 }
